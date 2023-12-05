@@ -29,9 +29,7 @@ let button_prev = document.querySelector('.prev');
 let x = 0;
 button_next.addEventListener("click", function(){
    
-    
-    x++
-
+    x = (x + 1) % images.length;
     console.log(images[x])
 
    
@@ -47,7 +45,7 @@ button_next.addEventListener("click", function(){
 
 button_prev.addEventListener("click", function(){
 
-    x --
+    x = (x - 1 + images.length) % images.length;
     console.log(images[x])
 
     document.querySelector('.item').innerHTML = `<img src="./${images[x].image}" alt="">
@@ -59,25 +57,3 @@ button_prev.addEventListener("click", function(){
 })
 
 
-// let nome;
-
-// images.forEach(function(elem){
-//     console.log(elem)
-
-//     let item = document.querySelector('.item');
-//     let img = `<img src="./${elem.img}" alt="">`;
-
-//     let div = document.querySelector('.padding-50');
-//     let h2 = `<h2>${elem.title}</h2>
-//     <h5>${elem.text}</h5>`;
-//     div.innerHTML = h2 + h5;
-
-
-
-//     item.appendChild(img) //innerHTML += 'sdhfksdf
-//     item.appendChild(div)
-//     nome = elem.title
-
-
-// })
-// console.log(nome);
