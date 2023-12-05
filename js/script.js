@@ -20,4 +20,64 @@ const images = [
         title: "Marvel's Avengers",
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
-];
+]
+
+let button_next = document.querySelector('.next');
+let button_prev = document.querySelector('.prev');
+
+
+let x = 0;
+button_next.addEventListener("click", function(){
+   
+    
+    x++
+
+    console.log(images[x])
+
+   
+    document.querySelector('.item').innerHTML = `<img src="./${images[x].image}" alt="">
+    <div class="position-absolute bottom-50 text-right color-white padding-text">
+        <h2>${images[x].title}</h2>
+        <h5>${images[x].text}</h5>
+    </div>`
+    
+    
+})
+
+
+button_prev.addEventListener("click", function(){
+
+    x --
+    console.log(images[x])
+
+    document.querySelector('.item').innerHTML = `<img src="./${images[x].image}" alt="">
+    <div class="position-absolute bottom-50 text-right color-white padding-text">
+        <h2>${images[x].title}</h2>
+        <h5>${images[x].text}</h5>
+    </div>`
+
+})
+
+
+// let nome;
+
+// images.forEach(function(elem){
+//     console.log(elem)
+
+//     let item = document.querySelector('.item');
+//     let img = `<img src="./${elem.img}" alt="">`;
+
+//     let div = document.querySelector('.padding-50');
+//     let h2 = `<h2>${elem.title}</h2>
+//     <h5>${elem.text}</h5>`;
+//     div.innerHTML = h2 + h5;
+
+
+
+//     item.appendChild(img) //innerHTML += 'sdhfksdf
+//     item.appendChild(div)
+//     nome = elem.title
+
+
+// })
+// console.log(nome);
